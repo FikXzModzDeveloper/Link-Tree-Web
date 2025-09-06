@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FikXzMods | Linktree</title>
+<link rel="preload" href="https://cdn.jsdelivr.net/gh/hfg-gmuend/openmoji@latest/color/svg/1F4C4.svg" as="image">
+<link rel="preload" href="https://cdn.jsdelivr.net/gh/hfg-gmuend/openmoji@latest/color/svg/1F4DD.svg" as="image">
+<link rel="preload" href="https://cdn.jsdelivr.net/gh/hfg-gmuend/openmoji@latest/color/svg/1F4AC.svg" as="image">
+<link rel="preload" href="https://cdn.jsdelivr.net/gh/hfg-gmuend/openmoji@latest/color/svg/1F4E7.svg" as="image">
+
+<style>
+:root {
+  --blue: #3b82f6;
+  --bg: #ffffff;
+  --text: #111827;
+  --sub: #6b7280;
+  --radius: 1.25em;
+  --shadow: 0 25px 50px -12px rgba(0,0,0,.15);
+  font-size: clamp(14px, 4vw, 18px);
+}
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html, body {
+  height: 100%;
+}
+body {
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text);
+  padding: 1em;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  outline: none;
+}
+a, button, img, svg {
+  -webkit-tap-highlight-color: transparent;
+  outline: none;
+}
+.card {
+  width: 100%;
+  max-width: 26em;
+  background: var(--bg);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 2.2em 1.8em;
+  animation: slideUp .8s cubic-bezier(.16, 1, .3, 1) forwards;
+  opacity: 0;
+  transform: translateY(30px);
+}
+@keyframes slideUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.profile {
+  text-align: center;
+  margin-bottom: 2em;
+}
+.profile img {
+  width: 6.5em;
+  height: 6.5em;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: .75em;
+  border: 3px solid var(--blue);
+  animation: float 3s ease-in-out infinite;
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+.profile h1 {
+  font-size: 1.5em;
+  margin-bottom: .2em;
+}
+.profile p {
+  font-size: .95em;
+  color: var(--sub);
+}
+.quote-wrap {
+  display: flex;
+  justify-content: center;
+  margin: 1.5em 0 2em;
+}
+.quote {
+  font-size: 1.1em;
+  color: var(--blue);
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 2px solid var(--blue);
+  animation: typing 4s steps(80, end), blink .75s step-end infinite;
+}
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+@keyframes blink {
+  from, to { border-color: transparent; }
+  50% { border-color: var(--blue); }
+}
+.links {
+  display: flex;
+  flex-direction: column;
+  gap: .9em;
+}
+.link {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  padding: 1em 1.2em;
+  border-radius: .9em;
+  background: #eff6ff;
+  color: var(--text);
+  text-decoration: none;
+  transition: transform .3s cubic-bezier(.34, 1.56, .64, 1), background .2s;
+  animation: fadeIn .5s ease-out both;
+}
+.link:nth-child(1) { animation-delay: .2s; }
+.link:nth-child(2) { animation-delay: .3s; }
+.link:nth-child(3) { animation-delay: .4s; }
+.link:nth-child(4) { animation-delay: .5s; }
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+.link:active {
+  transform: scale(.95);
+}
+.link:hover {
+  background: #dbeafe;
+}
+.link-icon {
+  width: 2.2em;
+  height: 2.2em;
+  border-radius: .6em;
+  background: var(--blue);
+  display: grid;
+  place-content: center;
+  flex-shrink: 0;
+}
+.link-icon svg {
+  width: 1.3em;
+  height: 1.3em;
+  fill: #fff;
+}
+.link-text strong {
+  display: block;
+  font-weight: 600;
+}
+.link-text span {
+  font-size: .8em;
+  color: var(--sub);
+}
+.social {
+  display: flex;
+  justify-content: center;
+  gap: 1em;
+  margin-top: 2em;
+}
+.social a {
+  width: 2.4em;
+  height: 2.4em;
+  border-radius: 50%;
+  background: var(--blue);
+  display: grid;
+  place-content: center;
+  transition: transform .3s cubic-bezier(.34, 1.56, .64, 1);
+}
+.social a:active {
+  transform: scale(.9);
+}
+.social svg {
+  width: 1.3em;
+  height: 1.3em;
+  fill: #fff;
+}
+.indicator {
+  position: fixed;
+  bottom: 2em;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(59, 130, 246, .9);
+  color: #fff;
+  padding: .6em 1.2em;
+  border-radius: 2em;
+  font-size: .8em;
+  opacity: 0;
+  transition: opacity .3s;
+  pointer-events: none;
+}
+.indicator.show {
+  opacity: 1;
+}
+</style>
+</head>
+
+<body>
+<audio id="audio"><source src="https://files.catbox.moe/f0b7fj.mp4" type="audio/mp4"></audio>
+
+<div class="card">
+  <div class="profile">
+    <img src="https://files.catbox.moe/c6z7n8.jpg" alt="FikXzMods">
+    <h1>FikXzMods</h1>
+    <p>Orang Gabut</p>
+  </div>
+
+  <div class="quote-wrap">
+    <div class="quote">i'm trying my hardest to not act how i feel</div>
+  </div>
+
+  <nav class="links">
+    <a class="link" href="https://prto.fikxzmods.biz.id/" target="_blank" rel="noopener">
+      <div class="link-icon">
+        <svg viewBox="0 0 24 24"><path d="M10 4H4c-1.11 0-2 .89-2 2v12c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2h-8l-2-2z"/></svg>
+      </div>
+      <div class="link-text">
+        <strong>My Portofolio</strong>
+        <span>Portofolio Personal Aing</span>
+      </div>
+    </a>
+
+    <a class="link" href="https://api.fikmydomainsz.xyz" target="_blank" rel="noopener">
+      <div class="link-icon">
+        <svg viewBox="0 0 24 24"><path d="M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5z"/></svg>
+      </div>
+      <div class="link-text">
+        <strong>My Rest API</strong>
+        <span>Rest Api Aing</span>
+      </div>
+    </a>
+
+    <a class="link" href="https://wa.me/628973965618" target="_blank" rel="noopener">
+      <div class="link-icon">
+        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm5.11 14.11l-1.05-.93c-.33-.3-.73-.55-1.2-.75-.46-.2-.95-.3-1.46-.3-.82 0-1.58.22-2.26.67-.68.45-1.22 1.06-1.6 1.83-.17.33-.5.44-.83.28l-2.1-1.05c-.33-.17-.44-.5-.28-.83.38-.77.92-1.44 1.6-2 1.37-1.02 3.05-1.53 4.96-1.53 1.37 0 2.63.34 3.79 1.02l1.05 1.05c.33.33.33.86 0 1.19z"/></svg>
+      </div>
+      <div class="link-text">
+        <strong>WhatsApp</strong>
+        <span>+62 897 3965 618</span>
+      </div>
+    </a>
+
+    <a class="link" href="mailto:f1kstore.gamil.1@gmail.com">
+      <div class="link-icon">
+        <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+      </div>
+      <div class="link-text">
+        <strong>Email</strong>
+        <span>f1kstore.gamil.1@gmail.com</span>
+      </div>
+    </a>
+  </nav>
+
+  <div class="social">
+    <a href="https://www.instagram.com/fikxzmodzz?igsh=MWU0d2Y2dWduMWY2bg==" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.162 6.162 6.162 6.162-2.759 6.162-6.162-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4s1.791-4 4-4 4 1.79 4 4-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+      </svg>
+    </a>
+
+    <a href="https://whatsapp.com/channel/0029Vb6Jjyf8KMqtrGJZJy0y" target="_blank" rel="noopener">
+      <svg viewBox="0 0 32 32" width="24" height="24" fill="currentColor">
+        <path d="M16 3C9.4 3 4 8.4 4 15c0 2.6.8 5 2.3 7.1L4 29l7.2-2.2C13.2 28.2 14.6 29 16 29c6.6 0 12-5.4 12-12S22.6 3 16 3zm0 22c-1.2 0-2.3-.3-3.4-.8l-.2-.1-4.3 1.3 1.4-4.1-.3-.4C8.6 19.4 8 17.2 8 15c0-4.4 3.6-8 8-8s8 3.6 8 8-3.6 8-8 8zm4.5-6.1c-.2-.1-1.3-.6-1.5-.7s-.4-.1-.6.1c-.2.2-.7.7-.9.9s-.3.2-.5.1c-.2-.1-.9-.3-1.7-1s-1.4-1.6-1.6-1.9c-.2-.3 0-.4.1-.6.1-.1.2-.3.3-.4.1-.1.1-.2.2-.3.1-.1.1-.2.2-.3.1-.1.1-.2.2-.3s0-.2 0-.3c0-.1-.6-1.5-.8-2-.2-.5-.4-.5-.6-.5h-.5c-.2 0-.4.1-.6.3s-.8.8-.8 2c0 1.2.8 2.3.9 2.5s1.5 2.3 3.6 3.2c.5.2.9.4 1.2.5.5.2.9.2 1.3.1.4-.1 1.3-.5 1.5-1 .2-.5.2-.9.2-1s-.1-.1-.2-.2z"/>
+      </svg>
+    </a>
+
+    <a href="https://t.me/fikxzmods" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+        <path d="M9.999 15.17 9.954 20c.637 0 .912-.273 1.246-.6l2.986-2.874 6.206 4.47c1.138.627 1.95.297 2.242-1.05L23.9 4.52c.359-1.44-.515-2-1.617-1.65L1.54 10.6c-1.406.563-1.388 1.354-.24 1.72l5.422 1.692L18.775 6.27c.531-.363 1.015-.163.617.2"/>
+      </svg>
+    </a>
+
+    <a href="https://github.com/FikXzModsDeveloper" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+        <path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/>
+      </svg>
+    </a>
+  </div>
+</div>
+
+<div id="indicator" class="indicator">▶ Playing once</div>
+
+<script>
+const audio = document.getElementById('audio');
+const indicator = document.getElementById('indicator');
+let played = false;
+
+document.body.addEventListener('click', () => {
+  if (played) return;
+  audio.play().then(() => {
+    played = true;
+    indicator.classList.add('show');
+    setTimeout(() => indicator.classList.remove('show'), 1500);
+  }).catch(() => {});
+}, { once: true });
+</script>
+</body>
+</html>
